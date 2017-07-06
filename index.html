@@ -4,6 +4,21 @@
 <link rel="stylesheet" href="form.css">
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Iceberg" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+<!---javascript stuffs for show/hide ------>
+<script>
+function showpassword() {
+var pass = document.getElementById('pwd');
+/*var show=Document.getElementById('reveal');*/
+
+if(document.getElementById('reveal').checked){
+  pass.setAttribute('type','text');
+}
+else {
+  pass.setAttribute('type','password');
+}
+}
+</script>
 </head>
 <body>
   <!--container div --->
@@ -16,9 +31,10 @@
 Name-<input  type="text" name="user" placeholder="enter your username"><br>
 </div>
 <div id="password">
-Password-<input  type="password" name="pass" placeholder="enter the secret key"><br>
+Password-<input  type="password" name="pass" id="pwd" placeholder="enter the secret key"><br>
 </div>
-
+<label for="show">show password</label>
+<input type="checkbox" id="reveal" name="passreveal"onclick="showpassword();">
 <div id="submit">
 <input type="submit" value="login">
 </div>
